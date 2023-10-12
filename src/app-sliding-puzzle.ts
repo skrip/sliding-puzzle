@@ -5,15 +5,16 @@ import './sliding-puzzle';
 import { SlidingPuzzle } from './sliding-puzzle';
 import './sliding-puzzle/hooray';
 import { Hooray } from './sliding-puzzle/hooray';
+const img = new URL(
+  '../../assets/image.jpeg',
+  import.meta.url
+).href;
 
 @customElement('app-sliding-puzzle')
 export class AppSlidingPuzzle extends LitElement {
   @property({ type: String }) header = 'Sliding Puzzle';
 
-  @property({ type: String }) image = new URL(
-    '../../../assets/image.jpeg',
-    import.meta.url
-  ).href;
+  @property({ type: String }) image = img;
 
   @property({ type: String }) steps = '0';
 
